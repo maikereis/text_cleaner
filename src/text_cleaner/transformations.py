@@ -58,7 +58,7 @@ class RemoveAccents(TextTransformation):
         )
 
 
-class RemoveNonAsciiExceptAccents:
+class RemoveNonAsciiExceptAccents(TextTransformation):
     """
     Removes non-ASCII characters except Latin letters (including those with diacritics).
     Removes characters from other scripts (e.g. Chinese, Japanese, Cyrillic).
