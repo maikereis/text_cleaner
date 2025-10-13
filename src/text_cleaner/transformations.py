@@ -18,6 +18,15 @@ from text_cleaner.base import TextTransformation
 # === Whitespace & Basic Cleanup ====================================================
 
 
+class LowercaseText(TextTransformation):
+    """
+    Converts all characters in the text to lowercase.
+    """
+
+    def apply(self, text: str) -> str:
+        return text.lower()
+
+
 class StripWhitespace(TextTransformation):
     """Removes leading and trailing whitespace from the text."""
 
@@ -143,7 +152,7 @@ class RemoveLongAlphanumerics(TextTransformation):
     Removes long alphanumeric tokens with 10 or more characters.
 
     Useful for removing hash-like strings such as:
-        '7434000304c3745cddbee9251a9cb6f5' → ''
+        '04c3745cdd' → ''
     """
 
     _pattern = re.compile(r"\b[a-zA-Z0-9]{10,}\b")
